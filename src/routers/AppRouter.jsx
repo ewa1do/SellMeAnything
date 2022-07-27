@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomeScreen } from '../components/Home/HomeScreen';
+import { LoginScreen } from '../components/Login/LoginScreen';
+import { RegisterScreen } from '../components/Register/RegisterScreen';
 
 export const AppRouter = () => {
   return (
@@ -8,6 +10,14 @@ export const AppRouter = () => {
         <Route
           path='/'
           element={<HomeScreen />}
+        />
+        <Route
+          path='login'
+          element={<LoginScreen />}
+        />
+        <Route
+          path='register'
+          element={<RegisterScreen />}
         />
       </Routes>
     </BrowserRouter>

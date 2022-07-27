@@ -8,7 +8,11 @@ module.exports = {
       lg: '976px',
       xl: '1440px',
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'login-sm': "url('/src/assets/login-sm-copy.png')",
+      },
+    },
   },
   plugins: [],
 };
