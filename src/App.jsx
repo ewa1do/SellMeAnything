@@ -1,13 +1,7 @@
-import { useState } from 'react';
+import { AppRouter } from './routers/AppRouter';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div className="App">
-      <h1 className="text-3xl font-semibold underline">Hello world!</h1>
-    </div>
-  );
+  return <AppRouter />;
 }
 
 export default App;
