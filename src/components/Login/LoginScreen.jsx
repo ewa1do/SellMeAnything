@@ -16,7 +16,7 @@ export const LoginScreen = () => {
         <button className='p-1 px-12 bg-black text-slate-50 rounded-xl'>
           <Link to='/register'>CREATE ACCOUNT</Link>
         </button>
-        <span className='my-2 text-center text-slate-50 underline'>
+        <span className='my-2 text-center text-slate-50 underline cursor-pointer'>
           Continue As Guest
         </span>
       </div>
