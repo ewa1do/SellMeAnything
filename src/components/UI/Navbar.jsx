@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import {
   IoSearchOutline,
   IoPersonOutline,
@@ -30,12 +32,22 @@ export const Navbar = () => {
         />
       </div>
       <div className='flex flex-row'>
-        <i className='text-xl mx-2 cursor-pointer text-slate-700 hover:text-slate-900 duration-300'>
-          <IoPersonOutline />
-        </i>
-        <i className='text-xl cursor-pointer text-slate-700 hover:text-slate-900 duration-300'>
-          <IoBagOutline />
-        </i>
+        <Link
+          to='/profile'
+          className='text-xl mx-2 cursor-pointer text-slate-700 hover:text-slate-900 duration-300'
+        >
+          <i>
+            <IoPersonOutline />
+          </i>
+        </Link>
+        <Link
+          to='/cart'
+          className='text-xl cursor-pointer text-slate-700 hover:text-slate-900 duration-300'
+        >
+          <i>
+            <IoBagOutline />
+          </i>
+        </Link>
       </div>
     </div>
   );
