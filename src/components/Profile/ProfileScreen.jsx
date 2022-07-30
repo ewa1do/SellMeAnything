@@ -1,31 +1,18 @@
-import { useNavigate } from 'react-router-dom';
-
 import {
-  IoArrowBackSharp,
   IoPersonCircleSharp,
   IoBagOutline,
   IoHeartOutline,
   IoPricetagOutline,
   IoLogOutOutline,
 } from 'react-icons/io5';
+import { ActionButtonWithIcon } from '../UI/ActionButtonWithIcon';
+
+import { LeftArrow } from '../UI/LeftArrow';
 
 export const ProfileScreen = () => {
-  const navigate = useNavigate();
-
-  const goToPreviousScreen = () => {
-    navigate(-1);
-  };
-
   return (
     <div>
-      <div className='my-3 mx-3'>
-        <span
-          className='text-2xl cursor-pointer'
-          onClick={goToPreviousScreen}
-        >
-          <IoArrowBackSharp />
-        </span>
-      </div>
+      <LeftArrow />
       <div className='my-16 flex flex-col items-center'>
         <span className='my-3 text-8xl'>
           <IoPersonCircleSharp />
@@ -38,7 +25,7 @@ export const ProfileScreen = () => {
             <i>
               <IoBagOutline />
             </i>
-            <span className='ml-3'>Buy History</span>
+            <span className='ml-3'>My Orders</span>
           </li>
           <li className='flex my-6 items-center text-xl'>
             <i>
@@ -55,12 +42,10 @@ export const ProfileScreen = () => {
         </ul>
       </div>
       <div className='flex justify-center mt-16'>
-        <button className='flex items-center text-xl text-slate-200 bg-slate-700 px-5 py-1 rounded-2xl'>
-          <i>
-            <IoLogOutOutline />
-          </i>
-          Log Out
-        </button>
+        <ActionButtonWithIcon
+          icon={<IoLogOutOutline />}
+          value='Log out'
+        />
       </div>
     </div>
   );
