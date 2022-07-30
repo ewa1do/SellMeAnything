@@ -1,13 +1,15 @@
+import { v4 } from 'uuid';
+
 import { Category } from './Category';
 import { categories } from '../../helpers/categories';
 
 export const CategoryList = () => {
   return (
     <div>
-      {categories.map((cat, i) => {
+      {categories.map((cat) => {
         return (
           <Category
-            key={i}
+            key={v4()}
             title={cat}
           />
         );
