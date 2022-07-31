@@ -13,7 +13,7 @@ export const LeftArrow = () => {
   };
 
   return (
-    <div className='my-3 mx-3'>
+    <div className='my-3 mx-3 flex'>
       <span
         className='text-2xl cursor-pointer'
         onClick={goToPreviousScreen}

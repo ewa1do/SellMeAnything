@@ -5,9 +5,10 @@ import {
   IoPricetagOutline,
   IoLogOutOutline,
 } from 'react-icons/io5';
-import { ActionButtonWithIcon } from '../UI/ActionButtonWithIcon';
 
+import { ActionButtonWithIcon } from '../UI/ActionButtonWithIcon';
 import { LeftArrow } from '../UI/LeftArrow';
+import { ListToScreenWIthIcon } from '../UI/ListToScreenWIthIcon';
 
 export const ProfileScreen = () => {
   return (
@@ -21,24 +22,23 @@ export const ProfileScreen = () => {
       </div>
       <div className='ml-16 max-w-fit'>
         <ul>
-          <li className='flex my-6 items-center text-xl'>
-            <i>
-              <IoBagOutline />
-            </i>
-            <span className='ml-3'>My Orders</span>
-          </li>
-          <li className='flex my-6 items-center text-xl'>
-            <i>
-              <IoHeartOutline />
-            </i>
-            <span className='ml-3'>Favorites</span>
-          </li>
-          <li className='flex my-4 items-center text-xl'>
-            <i>
-              <IoPricetagOutline />
-            </i>
-            <span className='ml-3'>My Sells</span>
-          </li>
+          <ListToScreenWIthIcon
+            path='/orders'
+            icon={<IoBagOutline />}
+            value='My Orders'
+          />
+
+          <ListToScreenWIthIcon
+            path='/favs'
+            icon={<IoHeartOutline />}
+            value='Favorites'
+          />
+
+          <ListToScreenWIthIcon
+            path='/sells'
+            icon={<IoPricetagOutline />}
+            value='My Sells'
+          />
         </ul>
       </div>
       <div className='flex justify-center mt-16'>
