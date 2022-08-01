@@ -25,5 +25,5 @@ export const ListComponent = ({ list, Component }) => {
 
 ListComponent.propTypes = {
   list: Proptypes.arrayOf(Proptypes.object).isRequired,
-  Component: Proptypes.element.isRequired,
+  Component: Proptypes.func.isRequired,
 };
