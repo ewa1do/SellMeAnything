@@ -18,3 +18,21 @@ export const itemList = [
     price: 30,
   },
 ];
+
+export const orders = [
+  {
+    desc: 'Random Order 1',
+    total: 100,
+    date: new Date().getTime(),
+  },
+  {
+    desc: 'Random Order 2',
+    total: 200,
+    date: new Date().getTime(),
+  },
+  {
+    desc: 'Random Order 3',
+    total: 300,
+    date: new Date().getTime(),
+  },
+];
