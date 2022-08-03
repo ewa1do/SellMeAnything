@@ -1,5 +1,5 @@
-import { LeftArrow } from '../UI/LeftArrow';
-import { ListComponent } from '../UI/ListComponent';
+import { LeftArrow } from '../../components/navigation/LeftArrow';
+import { ListComponent } from '../../components/lists/ListComponent';
 import { OrderComponent } from './OrderComponent';
 import { orders } from '../../helpers/itemList';
 

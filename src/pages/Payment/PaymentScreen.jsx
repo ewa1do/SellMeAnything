@@ -1,8 +1,8 @@
 import { IoCardOutline } from 'react-icons/io5';
 
-import { LeftArrow } from '../UI/LeftArrow';
-import { InputComponent } from '../UI/InputComponent';
-import { ActionButtonWithIcon } from '../UI/ActionButtonWithIcon';
+import { LeftArrow } from '../../components/navigation/LeftArrow';
+import { InputComponent } from '../../components/inputs/InputComponent';
+import { ActionButtonWithIcon } from '../../components/buttons/ActionButtonWithIcon';
 
 export const PaymentScreen = () => {
   return (

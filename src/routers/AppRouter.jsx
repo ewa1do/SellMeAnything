@@ -1,15 +1,20 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { CartScreen } from '../components/Cart/CartScreen';
-import { FavoritesScreen } from '../components/Favorites/FavoritesScreen';
-import { HomeScreen } from '../components/Home/HomeScreen';
-import { LoginScreen } from '../components/Login/LoginScreen';
-import { OrdersScreen } from '../components/Orders/OrdersScreen';
-import { PaymentScreen } from '../components/Payment/PaymentScreen';
-import { ProfileScreen } from '../components/Profile/ProfileScreen';
-import { RegisterScreen } from '../components/Register/RegisterScreen';
-import { SellsScreen } from '../components/Sells/SellsScreen';
+import { BestSellersScreen } from '../pages/BestSellers/BestSellersScreen';
+import { CartScreen } from '../pages/Cart/CartScreen';
+import { FavoritesScreen } from '../pages/Favorites/FavoritesScreen';
+import { HomeScreen } from '../pages/Home/HomeScreen';
+import { LoginScreen } from '../pages/Login/LoginScreen';
+import { NewArrivalsScreen } from '../pages/NewArrivals/NewArrivalsScreen';
+import { OrdersScreen } from '../pages/Orders/OrdersScreen';
+import { PaymentScreen } from '../pages/Payment/PaymentScreen';
+import { ProfileScreen } from '../pages/Profile/ProfileScreen';
+import { RegisterScreen } from '../pages/Register/RegisterScreen';
+import { SellsScreen } from '../pages/Sells/SellsScreen';
+import { ShopByDeparmentScreen } from '../pages/ShopByDepartment/ShopByDeparmentScreen';
+import { TrendingScreen } from '../pages/Trending/TrendingScreen';
 
+// TODO: refactor the app router by creating sub routers to organize all this mess! 😫
 export const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -49,6 +54,22 @@ export const AppRouter = () => {
         <Route
           path='favs'
           element={<FavoritesScreen />}
+        />
+        <Route
+          path='new'
+          element={<NewArrivalsScreen />}
+        />
+        <Route
+          path='shop-by-department'
+          element={<ShopByDeparmentScreen />}
+        />
+        <Route
+          path='best-sellers'
+          element={<BestSellersScreen />}
+        />
+        <Route
+          path='trends'
+          element={<TrendingScreen />}
         />
       </Routes>
     </BrowserRouter>

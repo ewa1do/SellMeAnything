@@ -6,9 +6,9 @@ import {
   IoLogOutOutline,
 } from 'react-icons/io5';
 
-import { ActionButtonWithIcon } from '../UI/ActionButtonWithIcon';
-import { LeftArrow } from '../UI/LeftArrow';
-import { ListToScreenWIthIcon } from '../UI/ListToScreenWIthIcon';
+import { ActionButtonWithIcon } from '../../components/buttons/ActionButtonWithIcon';
+import { ListToScreenWIthIcon } from '../../components/lists/ListToScreenWIthIcon';
+import { LeftArrow } from '../../components/navigation/LeftArrow';
 
 export const ProfileScreen = () => {
   return (

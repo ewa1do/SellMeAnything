@@ -1,6 +1,6 @@
 import { IoPersonOutline, IoBagOutline } from 'react-icons/io5';
 
-import { SearchInput } from './SearchInput';
+import { SearchInput } from '../../inputs/SearchInput';
 import { NavbarItem } from './NavbarItem';
 
 export const Navbar = () => {

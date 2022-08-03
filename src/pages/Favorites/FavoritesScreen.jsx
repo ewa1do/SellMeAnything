@@ -1,6 +1,6 @@
 import { FavoriteItem } from './FavoriteItem';
-import { ListComponent } from '../UI/ListComponent';
-import { LeftArrow } from '../UI/LeftArrow';
+import { LeftArrow } from '../../components/navigation/LeftArrow';
+import { ListComponent } from '../../components/lists/ListComponent';
 
 import { itemList } from '../../helpers/itemList';
 

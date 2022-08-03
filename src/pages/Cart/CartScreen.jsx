@@ -4,10 +4,11 @@ import {
   IoCheckboxOutline,
 } from 'react-icons/io5';
 
-import { ActionButtonWithIcon } from '../UI/ActionButtonWithIcon';
-import { LeftArrow } from '../UI/LeftArrow';
-import { ListComponent } from '../UI/ListComponent';
+import { ActionButtonWithIcon } from '../../components/buttons/ActionButtonWithIcon';
+import { LeftArrow } from '../../components/navigation/LeftArrow';
+import { ListComponent } from '../../components/lists/ListComponent';
 import { CartItem } from './CartItem';
+
 import { itemList } from '../../helpers/itemList';
 
 export const CartScreen = () => {

@@ -1,5 +1,5 @@
-import { ListComponent } from '../../components/UI/ListComponent';
-import { Navbar } from '../../components/UI/Navbar';
+import { ListComponent } from '../../components/lists/ListComponent';
+import { Navbar } from '../../components/Layout/Navbar/Navbar';
 import { Category } from './Category';
 import { categories } from '../../helpers/categories';
 

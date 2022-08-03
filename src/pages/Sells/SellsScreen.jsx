@@ -1,5 +1,5 @@
-import { LeftArrow } from '../../components/UI/LeftArrow';
-import { ListComponent } from '../../components/UI/ListComponent';
+import { LeftArrow } from '../../components/navigation/LeftArrow';
+import { ListComponent } from '../../components/lists/ListComponent';
 import { SellsComponent } from './SellsComponent';
 
 import { orders } from '../../helpers/itemList.js';
