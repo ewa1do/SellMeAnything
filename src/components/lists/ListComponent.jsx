@@ -6,15 +6,21 @@ import { useFetch } from '../../hooks/useFetch';
  *
  * @param {object[]} list An Object's Array
  * @param {Component} Component A Component to be iterable in the List
- * @param {category} category A category of the API
+ * @param {string} category A category of the API
+ * @param {boolean} center Center the list
  * @returns An Unordered List of React Components
  */
 
-export const ListComponent = ({ category, list, Component }) => {
+export const ListComponent = ({
+  category,
+  center = false,
+  list,
+  Component,
+}) => {
   const { data, loading } = useFetch(category);
 
   return (
-    <ul>
+    <ul className={center ? 'flex flex-col items-center' : ''}>
       {category
         ? data.map((item) => {
             return (
@@ -39,4 +45,6 @@ export const ListComponent = ({ category, list, Component }) => {
 ListComponent.propTypes = {
   list: Proptypes.arrayOf(Proptypes.object).isRequired,
   Component: Proptypes.func.isRequired,
+  category: Proptypes.string,
+  center: Proptypes.bool,
 };
