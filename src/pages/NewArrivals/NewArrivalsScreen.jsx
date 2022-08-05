@@ -11,7 +11,9 @@ export const NewArrivalsScreen = () => {
 
       <ListComponent
         list={detailedItems}
+        category='products'
         Component={ItemCard}
+        center={true}
       />
     </div>
   );
