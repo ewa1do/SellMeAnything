@@ -1,9 +1,10 @@
 import Proptypes from 'prop-types';
 import { v4 as uuid } from 'uuid';
+
 import { useFetch } from '../../hooks/useFetch';
+import { Spinner } from '../UI/Spinner';
 
 /**
- *
  * @param {object[]} list An Object's Array
  * @param {Component} Component A Component to be iterable in the List
  * @param {string} category A category of the API
@@ -21,6 +22,8 @@ export const ListComponent = ({
 
   return (
     <ul className={center ? 'flex flex-col items-center' : ''}>
+      {category && loading && <Spinner />}
+
       {category
         ? data.map((item) => {
             return (
@@ -43,8 +46,8 @@ export const ListComponent = ({
 };
 
 ListComponent.propTypes = {
-  list: Proptypes.arrayOf(Proptypes.object).isRequired,
-  Component: Proptypes.func.isRequired,
+  list: Proptypes.arrayOf(Proptypes.object),
   category: Proptypes.string,
   center: Proptypes.bool,
+  Component: Proptypes.func.isRequired,
 };
