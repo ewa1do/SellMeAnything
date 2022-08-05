@@ -4,7 +4,7 @@ import { ButtonCard } from '../buttons/ButtonCard';
 
 export const ItemCard = ({ desc, url, title, price }) => {
   return (
-    <div className='flex flex-col p-4 border-2 border-slate-300 rounded my-8 w-4/5 shadow-lg'>
+    <div className='flex flex-col p-4 border-2 border-slate-300 rounded-md my-8 w-4/5 shadow-lg'>
       <div className='flex justify-between'>
         <div>
           <h3 className='text-2xl font-semibold'>{title}</h3>
@@ -27,7 +27,7 @@ export const ItemCard = ({ desc, url, title, price }) => {
       <div className='flex flex-col'>
         <img
           src={url}
-          className='w-5/5 py-4'
+          className='py-4 w-5/5 min-h-80'
         />
 
         <ButtonCard
