@@ -18,7 +18,7 @@ export const ListComponent = ({
   list,
   Component,
 }) => {
-  const { data, loading } = useFetch(category);
+  const { data, loading } = useFetch(category, 5);
 
   return (
     <ul className={center ? 'flex flex-col items-center' : ''}>
