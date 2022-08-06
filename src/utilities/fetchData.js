@@ -1,7 +1,11 @@
-export const fetchData = async (endpoint) => {
-  const res = await fetch(
-    `https://dummyjson.com/${endpoint}?limit=5`
-  );
+import { API_URL_TEST } from './config';
+
+export const fetchData = async (endpoint, limit) => {
+  const baseURL = `${API_URL_TEST}/${endpoint}/${
+    limit ? '?limit=' + limit : ''
+  }`;
+
+  const res = await fetch(baseURL);
 
   const { products } = await res.json();
 
@@ -15,6 +19,5 @@ export const fetchData = async (endpoint) => {
     };
   });
 
-  console.log(formattedProducts);
   return formattedProducts;
 };
