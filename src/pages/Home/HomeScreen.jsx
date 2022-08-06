@@ -1,7 +1,7 @@
 import { ListComponent } from '../../components/lists/ListComponent';
 import { Navbar } from '../../components/Layout/Navbar/Navbar';
 import { Category } from './Category';
-import { categories } from '../../helpers/categories';
+import { categories } from '../../utilities/categories';
 
 export const HomeScreen = () => {
   return (

@@ -14,7 +14,7 @@ export const Category = ({ title, path, thumbnail }) => {
     <div className='mt-10 py-8'>
       <Link to={path}>
         <h1 className='font-semibold text-2xl'>{title}</h1>
-        <div className='h-80 w-9/12 ml-4 mt-2 rounded-md'>
+        <div className='h-80 w-10/12 ml-10 mt-2 rounded-md'>
           <img src={thumbnail} />
         </div>
       </Link>
