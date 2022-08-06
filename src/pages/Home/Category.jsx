@@ -1,17 +1,29 @@
 import Proptypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-export const Category = ({ title, path }) => {
+/**
+ *
+ * @param {string} title The title for the category
+ * @param {string} path A path for the router
+ * @param {string} thumbnail The thumbnail for the card
+ * @returns A Card component for categories
+ */
+
+export const Category = ({ title, path, thumbnail }) => {
   return (
-    <div className='mt-10'>
-      <h1 className='font-semibold'>{title}</h1>
+    <div className='mt-10 py-8'>
       <Link to={path}>
-        <div className='h-80 w-9/12 ml-4 mt-2 bg-red-300 rounded-md'></div>
+        <h1 className='font-semibold text-2xl'>{title}</h1>
+        <div className='h-80 w-9/12 ml-4 mt-2 rounded-md'>
+          <img src={thumbnail} />
+        </div>
       </Link>
     </div>
   );
 };
 
 Category.propTypes = {
-  title: Proptypes.string,
+  title: Proptypes.string.isRequired,
+  path: Proptypes.string,
+  thumbnail: Proptypes.string,
 };
