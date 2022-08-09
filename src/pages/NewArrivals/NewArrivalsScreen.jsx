@@ -17,6 +17,7 @@ export const NewArrivalsScreen = () => {
         category='products'
         Component={ItemCard}
         center={true}
+        pagination={true}
       />
     </div>
   );

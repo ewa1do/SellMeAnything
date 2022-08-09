@@ -1,7 +1,8 @@
 import Proptypes from 'prop-types';
 import { v4 as uuid } from 'uuid';
 
-import { useFetch } from '../../hooks/useFetch';
+import { usePagination } from '../../hooks/usePagination';
+import { PaginationComponent } from '../navigation/PaginationComponent';
 import { Spinner } from '../UI/Spinner';
 
 /**
@@ -17,31 +18,43 @@ export const ListComponent = ({
   center = false,
   list,
   Component,
+  pagination = false,
 }) => {
-  const { data, loading } = useFetch(category, 5);
+  const { data, loading, currentItems, itemsPerPage, paginate } =
+    usePagination(category);
 
   return (
-    <ul className={center ? 'flex flex-col items-center' : ''}>
-      {category && loading && <Spinner />}
+    <>
+      <ul className={center ? 'flex flex-col items-center' : ''}>
+        {category && loading && <Spinner />}
 
-      {category
-        ? data.map((item) => {
-            return (
-              <Component
-                key={uuid()}
-                {...item}
-              />
-            );
-          })
-        : list.map((item) => {
-            return (
-              <Component
-                key={uuid()}
-                {...item}
-              />
-            );
-          })}
-    </ul>
+        {category
+          ? currentItems.map((item) => {
+              return (
+                <Component
+                  key={uuid()}
+                  {...item}
+                />
+              );
+            })
+          : list.map((item) => {
+              return (
+                <Component
+                  key={uuid()}
+                  {...item}
+                />
+              );
+            })}
+      </ul>
+
+      {pagination && (
+        <PaginationComponent
+          totalItems={data.length}
+          itemsPerPage={itemsPerPage}
+          paginate={paginate}
+        />
+      )}
+    </>
   );
 };
 
