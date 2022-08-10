@@ -14,6 +14,7 @@ export const BestSellersScreen = () => {
         category='products'
         Component={ItemCard}
         center={true}
+        pagination={true}
       />
     </div>
   );

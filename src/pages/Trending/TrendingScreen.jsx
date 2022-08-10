@@ -14,6 +14,7 @@ export const TrendingScreen = () => {
         category='products'
         Component={ItemCard}
         center={true}
+        pagination={true}
       />
     </div>
   );

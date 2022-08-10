@@ -14,6 +14,7 @@ export const ShopByDeparmentScreen = () => {
         category='products'
         Component={ItemCard}
         center={true}
+        pagination={true}
       />
     </div>
   );
