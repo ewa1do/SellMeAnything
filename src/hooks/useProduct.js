@@ -1,6 +1,12 @@
 import { useState, useMemo } from 'react';
 import { API_URL_TEST } from '../utilities/config';
 
+/**
+ *
+ * @param {number} productId
+ * @returns A memorize object with data from the response
+ */
+
 export const useProduct = (productId) => {
   const [productState, setProductState] = useState({
     data: {},
