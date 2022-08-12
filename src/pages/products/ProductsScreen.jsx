@@ -2,23 +2,18 @@ import { useParams } from 'react-router-dom';
 
 import { Navbar } from '../../components/Layout/Navbar/Navbar';
 import { useProduct } from '../../hooks/useProduct';
+import { useQuantity } from '../../hooks/useQuantity';
 
 export const ProductsScreen = () => {
   const { productId } = useParams();
-
   const product = useProduct(productId);
 
+  // prettier-ignore
+  const { description, images, price, stock, thumbnail, title, category } = product.data;
   const { loading } = product;
 
-  const {
-    description,
-    images,
-    price,
-    stock,
-    thumbnail,
-    title,
-    category,
-  } = product.data;
+  const { productQty, incrementQty, decrementQty } =
+    useQuantity();
 
   return (
     <div className='p-3 flex flex-col items-center mb-10'>
@@ -46,12 +41,20 @@ export const ProductsScreen = () => {
               <h3 className='text-xl ml-2'>US$ {price}</h3>
             </div>
 
-            <div className='mr-2 mt-2 border-2 border-gray-600 rounded-md h-12'>
-              <button className='text-2xl px-2 text-slate-800'>
+            <div className=' flex items-center mr-2 mt-2 border-2 border-gray-600 rounded-md h-12'>
+              <button
+                className='text-xl px-2 text-slate-800'
+                onClick={decrementQty}
+              >
                 -
               </button>
-              <span className='text-xl text-gray-800'>1</span>
-              <button className='text-xl px-2 text-slate-800'>
+              <span className='text-xl text-gray-800'>
+                {productQty}
+              </span>
+              <button
+                className='text-xl px-2 text-slate-800'
+                onClick={incrementQty}
+              >
                 +
               </button>
             </div>
