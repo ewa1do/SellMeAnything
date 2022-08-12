@@ -12,6 +12,9 @@ module.exports = {
       backgroundImage: {
         'login-sm': "url('/src/assets/login-sm-copy.png')",
       },
+      boxShadow: {
+        'leever-shadow': '0 10px 20px #0000004a',
+      },
     },
   },
   plugins: [],
