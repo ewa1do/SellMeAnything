@@ -5,18 +5,18 @@ import { useSlider } from '../../hooks/useSlider';
 /**
  *
  * @param {string} thumbnail Thumbnail to be shown first on the slider
- * @param {array} images An array containing the images to be rendered on the slider
+ * @param {array} images An array containing the igit mages to be rendered on the slider
  * @returns An image Carousel with a thumbnail and a pagination for the remaining images
  */
 
-export const Carousel = ({ thumbnail, images }) => {
+export const Carousel = ({ thumbnail, images, duration }) => {
   const imageSlider = [thumbnail, ...images];
 
   const {
     activeImage,
     activeSlide,
     changeActiveSlideImageWhenClick,
-  } = useSlider(imageSlider, 4);
+  } = useSlider(imageSlider, duration);
 
   return (
     <>
@@ -49,4 +49,5 @@ export const Carousel = ({ thumbnail, images }) => {
 Carousel.Proptypes = {
   thumbnail: Proptypes.string.isRequired,
   images: Proptypes.arrayOf(Proptypes.string).isRequired,
+  duration: Proptypes.number,
 };
