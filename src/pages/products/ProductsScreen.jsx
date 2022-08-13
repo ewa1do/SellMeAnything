@@ -32,6 +32,7 @@ export const ProductsScreen = () => {
           <Carousel
             thumbnail={thumbnail}
             images={images}
+            duration={4}
           />
         )}
 

@@ -1,5 +1,6 @@
-import { useState } from 'react';
 import Proptypes from 'prop-types';
+
+import { useSlider } from '../../hooks/useSlider';
 
 /**
  *
@@ -11,13 +12,11 @@ import Proptypes from 'prop-types';
 export const Carousel = ({ thumbnail, images }) => {
   const imageSlider = [thumbnail, ...images];
 
-  const [activeImage, setActiveImage] = useState(imageSlider[0]);
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  const changeActiveImageAndSlide = (img, idx) => {
-    setActiveImage(img);
-    setActiveSlide(idx);
-  };
+  const {
+    activeImage,
+    activeSlide,
+    changeActiveSlideImageWhenClick,
+  } = useSlider(imageSlider, 4);
 
   return (
     <>
@@ -29,7 +28,7 @@ export const Carousel = ({ thumbnail, images }) => {
       </picture>
 
       <ul className='flex justify-center my-2'>
-        {imageSlider.map((img, i) => {
+        {imageSlider.map((_, i) => {
           return (
             <li
               key={i}
@@ -38,7 +37,7 @@ export const Carousel = ({ thumbnail, images }) => {
                   ? 'bg-slate-900'
                   : 'bg-slate-700'
               } h-2 w-2 mx-1 mt-3 rounded-full hover:bg-slate-900 cursor-pointer`}
-              onClick={() => changeActiveImageAndSlide(img, i)}
+              onClick={() => changeActiveSlideImageWhenClick(i)}
             ></li>
           );
         })}
