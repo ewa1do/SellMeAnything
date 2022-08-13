@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 
 import { Navbar } from '../../components/Layout/Navbar/Navbar';
+import { Carousel } from '../../components/UI/Carousel';
 import { useProduct } from '../../hooks/useProduct';
 import { useQuantity } from '../../hooks/useQuantity';
 
@@ -9,11 +10,11 @@ export const ProductsScreen = () => {
   const product = useProduct(productId);
 
   // prettier-ignore
-  const { description, images, price, stock, thumbnail, title, category } = product.data;
+  const { description, price, stock, title, category, thumbnail, images } = product.data;
   const { loading } = product;
 
   const { productQty, incrementQty, decrementQty } =
-    useQuantity();
+    useQuantity(stock);
 
   return (
     <div className='p-3 flex flex-col items-center mb-10'>
@@ -27,12 +28,12 @@ export const ProductsScreen = () => {
           </h1>
         </div>
 
-        <picture className='flex justify-center'>
-          <img
-            src={thumbnail}
-            className='w-70 h-48'
+        {images && (
+          <Carousel
+            thumbnail={thumbnail}
+            images={images}
           />
-        </picture>
+        )}
 
         <div className='flex flex-col my-4'>
           <div className='flex justify-between'>
