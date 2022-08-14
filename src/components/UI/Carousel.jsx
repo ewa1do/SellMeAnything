@@ -5,7 +5,8 @@ import { useSlider } from '../../hooks/useSlider';
 /**
  *
  * @param {string} thumbnail Thumbnail to be shown first on the slider
- * @param {array} images An array containing the igit mages to be rendered on the slider
+ * @param {array} images An array containing the images to be rendered on the slider
+ * @param {number} duration The duration of each slide in seconds
  * @returns An image Carousel with a thumbnail and a pagination for the remaining images
  */
 
