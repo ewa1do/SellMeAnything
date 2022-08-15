@@ -15,12 +15,14 @@ export const useFetch = (category = 'products', limit, skip) => {
   });
 
   useEffect(() => {
-    fetchData(category, { limit, skip }).then((prods) => {
-      setState({
-        data: prods,
-        loading: false,
-      });
-    });
+    fetchData(undefined, category, { limit, skip }).then(
+      (prods) => {
+        setState({
+          data: prods,
+          loading: false,
+        });
+      }
+    );
   }, [category]);
   return state;
 };
