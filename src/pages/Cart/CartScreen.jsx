@@ -38,7 +38,7 @@ export const CartScreen = () => {
             </ul>
 
             <div>
-              <div className='flex flex-col border-b py-6'>
+              <div className='flex flex-col border-b py-3'>
                 <hgroup className='flex justify-between px-4 my-1'>
                   <h3 className='text-gray-500'>Subtotal</h3>
                   <h6 className='text-sm font-semibold'>
@@ -52,7 +52,7 @@ export const CartScreen = () => {
                   </h6>
                 </hgroup>
               </div>
-              <hgroup className='flex justify-between px-4 pt-6'>
+              <hgroup className='flex justify-between px-4 pt-4 items-center'>
                 <h2>Total</h2>
                 <h2 className='text-2xl'>
                   <span className='text-sm text-gray-700'>
