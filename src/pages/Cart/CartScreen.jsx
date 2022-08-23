@@ -3,8 +3,9 @@ import { v4 as uuid } from 'uuid';
 import { Link } from 'react-router-dom';
 import { IoCardOutline } from 'react-icons/io5';
 
-import { LeftArrow } from '../../components/navigation/LeftArrow';
 import { CartItem } from './CartItem';
+import { CartScreenEmpty } from './CartScreenEmpty';
+import { LeftArrow } from '../../components/navigation/LeftArrow';
 
 import { calculateSubtotalShippingAndTotal } from '../../utilities/calculateTotal';
 
@@ -77,7 +78,7 @@ export const CartScreen = () => {
           </div>
         </div>
       ) : (
-        <div>No data</div>
+        <CartScreenEmpty />
       )}
     </div>
   );
