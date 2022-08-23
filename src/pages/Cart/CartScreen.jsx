@@ -1,35 +1,29 @@
 import { useSelector } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 import { Link } from 'react-router-dom';
-import {
-  IoCardOutline,
-  IoCheckboxOutline,
-} from 'react-icons/io5';
+import { IoCardOutline } from 'react-icons/io5';
 
-import { ActionButtonWithIcon } from '../../components/buttons/ActionButtonWithIcon';
 import { LeftArrow } from '../../components/navigation/LeftArrow';
 import { CartItem } from './CartItem';
+
+import { calculateSubtotalShippingAndTotal } from '../../utilities/calculateTotal';
 
 export const CartScreen = () => {
   const { items: cartItems } = useSelector(
     (state) => state.cart
   );
 
+  const [subtotal, shippingCost, total] =
+    calculateSubtotalShippingAndTotal(cartItems);
+
   return (
     <div>
       <LeftArrow />
 
       {cartItems.length !== 0 ? (
-        <>
-          <div className='flex items-center justify-center text-2xl'>
-            <i className='pr-2'>
-              <IoCheckboxOutline />
-            </i>
-            <h1>Orders</h1>
-          </div>
-
-          <div className='flex justify-center mt-20'>
-            <ul className='flex flex-col justify-end px-8 pb-8 w-3/4'>
+        <div className='flex flex-col items-center py-6'>
+          <div className='flex flex-col justify-center w-5/6 shadow-leever-shadow rounded-md'>
+            <ul className='flex flex-col justify-end pb-8 border-b'>
               {cartItems.map((item, i) => {
                 return (
                   <CartItem
@@ -42,18 +36,46 @@ export const CartScreen = () => {
                 );
               })}
             </ul>
-          </div>
 
-          <Link
-            to='/pay'
-            className='flex justify-center mt-40'
-          >
-            <ActionButtonWithIcon
-              Icon={IoCardOutline}
-              value='Pay'
-            />
-          </Link>
-        </>
+            <div>
+              <div className='flex flex-col border-b py-6'>
+                <hgroup className='flex justify-between px-4 my-1'>
+                  <h3 className='text-gray-500'>Subtotal</h3>
+                  <h6 className='text-sm font-semibold'>
+                    ${subtotal}
+                  </h6>
+                </hgroup>
+                <hgroup className='flex justify-between px-4 my-1'>
+                  <h3 className='text-gray-500'>Shipping</h3>
+                  <h6 className='text-sm font-semibold'>
+                    ${shippingCost}
+                  </h6>
+                </hgroup>
+              </div>
+              <hgroup className='flex justify-between px-4 pt-6'>
+                <h2>Total</h2>
+                <h2 className='text-2xl'>
+                  <span className='text-sm text-gray-700'>
+                    US$
+                  </span>{' '}
+                  {total}
+                </h2>
+              </hgroup>
+            </div>
+
+            <Link
+              to='/pay'
+              className='flex justify-center mt-6 py-8'
+            >
+              <button className='flex bg-gray-800 w-full mx-6 rounded-md text-center text-lg justify-center items-center text-gray-200 py-2'>
+                <i className='px-2 '>
+                  <IoCardOutline />
+                </i>
+                Place order
+              </button>
+            </Link>
+          </div>
+        </div>
       ) : (
         <div>No data</div>
       )}
