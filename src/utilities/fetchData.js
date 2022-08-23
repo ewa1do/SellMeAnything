@@ -1,9 +1,12 @@
-import { min } from 'moment';
 import { API_URL_TEST } from './config';
+import { v4 as uuid } from 'uuid';
 
-// export const fetchData = async (endpoint, limit, skip) => {
-export const fetchData = async (endpoint, options) => {
-  let baseURL = `${API_URL_TEST}/${endpoint}/${
+export const fetchData = async (
+  url = API_URL_TEST,
+  endpoint,
+  options
+) => {
+  let baseURL = `${url}/${endpoint}/${
     options.limit ? '?limit=' + options.limit : ''
   }`;
 
@@ -24,6 +27,7 @@ export const fetchData = async (endpoint, options) => {
       url: prod.thumbnail,
       stock: prod.stock,
       price: prod.price,
+      id: prod.id,
     };
   });
 
