@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { v4 as uuid } from 'uuid';
 
 export const SearchModal = ({ data = [], query }) => {
   return (
@@ -7,14 +8,14 @@ export const SearchModal = ({ data = [], query }) => {
         query?.length >= 3 ? 'opacity-1' : 'opacity-0'
       }`}
     >
-      <ul className='flex flex-col border-2 bg-slate-50'>
+      <ul className='flex flex-col border-2 py-2 bg-slate-50'>
         {data.map((item) => {
           return (
-            <Link to={`product/${item.id}`}>
-              <li
-                key={item.id}
-                className='flex mx-3 py-1'
-              >
+            <Link
+              to={`/product/${item.id}`}
+              key={uuid()}
+            >
+              <li className='flex py-1 hover:bg-slate-200'>
                 <img
                   src={item.thumbnail}
                   className='h-6 w-6 mx-3'
