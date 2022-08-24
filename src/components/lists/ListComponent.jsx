@@ -29,10 +29,10 @@ export const ListComponent = ({
         {category && loading && <Spinner />}
 
         {category
-          ? currentItems.map((item) => {
+          ? currentItems.map((item, i) => {
               return (
                 <Component
-                  key={uuid()}
+                  key={item.id}
                   {...item}
                 />
               );
