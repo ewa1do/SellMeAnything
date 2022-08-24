@@ -1,7 +1,7 @@
-export const shortParagraph = (string = '') => {
+export const shortParagraph = (string = '', limit = 9) => {
   const shorterP = string
     .split(' ')
-    .filter((_, i) => i < 9)
+    .filter((_, i) => i < limit)
     .join(' ');
 
   return shorterP;
