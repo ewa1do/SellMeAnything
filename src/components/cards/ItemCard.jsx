@@ -1,11 +1,20 @@
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { IoBagAdd } from 'react-icons/io5';
 
 import { shortParagraph } from '../../utilities/shortParagraph';
-import { ButtonCard } from '../buttons/ButtonCard';
+
+import { cartAddNewItem } from '../../redux/actions/cartActions';
+import { ButtonComponent } from '../buttons/ButtonComponent';
 
 export const ItemCard = (props) => {
   const { desc, url: thumbnail, title, price, id } = props;
+
+  const dispatch = useDispatch();
+
+  const handleAddNewItem = () => {
+    dispatch(cartAddNewItem(props));
+  };
 
   return (
     <div className='flex flex-col p-4 border-2 border-slate-300 rounded-md my-8 w-4/5 shadow-lg'>
@@ -38,10 +47,10 @@ export const ItemCard = (props) => {
           />
         </Link>
 
-        <ButtonCard
+        <ButtonComponent
           Icon={IoBagAdd}
-          value='add to cart'
-          props={{ ...props, thumbnail }}
+          value='Add to Bag'
+          onClick={handleAddNewItem}
         />
       </div>
     </div>

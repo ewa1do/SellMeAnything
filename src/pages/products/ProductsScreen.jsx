@@ -1,22 +1,33 @@
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { IoBagAdd } from 'react-icons/io5';
+import { IoBagAdd, IoHeartSharp } from 'react-icons/io5';
 
-import { ButtonCard } from '../../components/buttons/ButtonCard';
 import { Navbar } from '../../components/Layout/Navbar/Navbar';
 import { Carousel } from '../../components/UI/Carousel';
 import { useProduct } from '../../hooks/useProduct';
 import { useQuantity } from '../../hooks/useQuantity';
+import { ButtonComponent } from '../../components/buttons/ButtonComponent';
+import { cartAddNewItem } from '../../redux/actions/cartActions';
 
 export const ProductsScreen = () => {
+  const dispatch = useDispatch();
   const { productId } = useParams();
   const product = useProduct(productId);
 
+  // TODO: including the seller info on the screen
   // prettier-ignore
   const { description, price, stock, title, category, thumbnail, images, id } = product.data;
   const { loading } = product;
 
-  const { productQty, incrementQty, decrementQty } =
-    useQuantity(stock);
+  const { productQty, incrementQty, decrementQty } = useQuantity(
+    1,
+    stock
+  );
+
+  const handleAddNewItem = () =>
+    dispatch(cartAddNewItem(product.data));
+
+  const handleAddToFavorites = () => console.log('favorites'); //TODO: Create the logic to add to favorites
 
   return (
     <div className='p-3 flex flex-col items-center mb-10'>
@@ -46,7 +57,7 @@ export const ProductsScreen = () => {
                 <h3 className='text-xl ml-2'>US$ {price}</h3>
               </div>
 
-              <div className=' flex items-center mr-2 mt-2 border-2 border-gray-600 rounded-md h-12'>
+              <div className='flex items-center mr-2 mt-2 border-2 border-gray-600 rounded-md h-12'>
                 <button
                   className='text-xl px-2 text-slate-800'
                   onClick={decrementQty}
@@ -66,20 +77,16 @@ export const ProductsScreen = () => {
             </div>
 
             <div className='flex flex-col my-3 mt-12 px-2'>
-              <ButtonCard
+              <ButtonComponent
                 Icon={IoBagAdd}
-                value='Add to bag'
-                props={{
-                  title,
-                  price,
-                  thumbnail,
-                  productQty,
-                  id,
-                }}
+                onClick={handleAddNewItem}
               />
-              <button className='w-full py-1 bg-gray-800 text-slate-200 rounded'>
-                Add to Favorites
-              </button>
+
+              <ButtonComponent
+                Icon={IoHeartSharp}
+                value='Add to Favorites'
+                onClick={handleAddToFavorites}
+              />
             </div>
             <h4 className='mt-6 text-sm text-slate-800 text-center'>
               {description}
