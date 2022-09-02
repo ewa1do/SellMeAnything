@@ -5,9 +5,10 @@ export const cartAddNewItem = (item) => {
     type: types.cartAddNewItem,
     payload: {
       title: item.title,
-      thumbnail: item.thumbnail,
+      thumbnail: item.url || item.thumbnail,
       price: item.price,
       id: item.id,
+      stock: item.stock,
       qty: item.productQty || 1,
     },
   };
