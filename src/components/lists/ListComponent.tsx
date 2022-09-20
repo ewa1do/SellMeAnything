@@ -13,15 +13,8 @@ import { Spinner } from '../UI/Spinner';
  * @returns An Unordered List of React Components
  */
 
-export const ListComponent = ({
-  category,
-  center = false,
-  list,
-  Component,
-  pagination = false,
-}) => {
-  const { data, loading, currentItems, itemsPerPage, paginate } =
-    usePagination(category);
+export const ListComponent = ({ category, center = false, list, Component, pagination = false }) => {
+  const { data, loading, currentItems, itemsPerPage, paginate } = usePagination(category);
 
   return (
     <>
