@@ -4,17 +4,18 @@
  * @returns An array containing the subtotal, the shoppingCost and the total of the cart
  */
 
-export const calculateSubtotalShippingAndTotal = (arr = []) => {
+interface Args {
+  price: number;
+  qty: number;
+}
+
+export const calculateSubtotalShippingAndTotal = <T extends Args>(arr: T[]): number[] => {
   let subtotal = 0;
 
-  arr.forEach((item) => {
-    subtotal += item.price * item.qty;
-  });
+  arr.map(({ price, qty }) => (subtotal += price * qty));
 
   const shippingCost = subtotal * 0.03;
   const total = subtotal + shippingCost;
 
-  return [subtotal, shippingCost, total].map((price) =>
-    price.toFixed(2)
-  );
+  return [subtotal, shippingCost, total].map((num) => Number(num.toFixed(2)));
 };

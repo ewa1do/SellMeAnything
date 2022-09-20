@@ -11,9 +11,7 @@ export const CartScreenEmpty = () => {
         />
         <hgroup className='text-center py-3'>
           <h2 className='text-2xl py-1'>Your Bag is Empty 🥺</h2>
-          <h3 className='text-gray-600 w-52 mx-auto'>
-            Looks like you haven't made your choice yet
-          </h3>
+          <h3 className='text-gray-600 w-52 mx-auto'>Looks like you haven't made your choice yet</h3>
         </hgroup>
 
         <Link
