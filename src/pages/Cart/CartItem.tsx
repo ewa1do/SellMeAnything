@@ -1,12 +1,16 @@
 import { IoTrashBinOutline } from 'react-icons/io5';
 
-export const CartItem = ({ props }) => {
+import { Product } from '../../interfaces';
+
+interface CartProps extends Product {
+  iteration: number;
+}
+
+export const CartItem = (props: Product) => {
   const { title, thumbnail, qty, price, stock } = props;
 
   return (
-    <li
-      className={`container flex h-32 px-4 justify-around items-center relative max-w-sm`}
-    >
+    <li className={`container flex h-32 px-4 justify-around items-center relative max-w-sm`}>
       <div className='relative'>
         <img
           src={thumbnail}
