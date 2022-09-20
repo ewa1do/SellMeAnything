@@ -1,16 +1,18 @@
+import { Fragment } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { BestSellersScreen } from '../pages/BestSellers/BestSellersScreen';
 import { CartScreen } from '../pages/Cart/CartScreen';
 import { FavoritesScreen } from '../pages/Favorites/FavoritesScreen';
 import { HomeScreen } from '../pages/Home/HomeScreen';
 import { LoginScreen } from '../pages/Login/LoginScreen';
-import { NewArrivalsScreen } from '../pages/NewArrivals/NewArrivalsScreen';
 import { OrdersScreen } from '../pages/Orders/OrdersScreen';
 import { PaymentScreen } from '../pages/Payment/PaymentScreen';
 import { ProfileScreen } from '../pages/Profile/ProfileScreen';
 import { RegisterScreen } from '../pages/Register/RegisterScreen';
 import { SellsScreen } from '../pages/Sells/SellsScreen';
+import { BestSellersScreen } from '../pages/BestSellers/BestSellersScreen';
+import { ProductsScreen } from '../pages/Products/ProductsScreen';
+import { NewArrivalsScreen } from '../pages/NewArrivals/NewArrivalsScreen';
 import { ShopByDeparmentScreen } from '../pages/ShopByDepartment/ShopByDeparmentScreen';
 import { TrendingScreen } from '../pages/Trending/TrendingScreen';
 
@@ -55,22 +57,33 @@ export const AppRouter = () => {
           path='favs'
           element={<FavoritesScreen />}
         />
-        <Route
-          path='new'
-          element={<NewArrivalsScreen />}
-        />
-        <Route
-          path='shop-by-department'
-          element={<ShopByDeparmentScreen />}
-        />
-        <Route
-          path='best-sellers'
-          element={<BestSellersScreen />}
-        />
-        <Route
-          path='trends'
-          element={<TrendingScreen />}
-        />
+        {/* <Route
+          path='/*'
+          element={<PagesRoutes />}
+        /> */}
+
+        <Fragment>
+          <Route
+            path='new'
+            element={<NewArrivalsScreen />}
+          />
+          <Route
+            path='shop-by-department'
+            element={<ShopByDeparmentScreen />}
+          />
+          <Route
+            path='best-sellers'
+            element={<BestSellersScreen />}
+          />
+          <Route
+            path='trends'
+            element={<TrendingScreen />}
+          />
+          <Route
+            path='product/:productId'
+            element={<ProductsScreen />}
+          />
+        </Fragment>
       </Routes>
     </BrowserRouter>
   );

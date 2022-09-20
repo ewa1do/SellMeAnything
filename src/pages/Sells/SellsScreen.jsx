@@ -2,7 +2,7 @@ import { LeftArrow } from '../../components/navigation/LeftArrow';
 import { ListComponent } from '../../components/lists/ListComponent';
 import { SellsComponent } from './SellsComponent';
 
-import { orders } from '../../helpers/itemList.js';
+import { orders } from '../../utilities/itemList.js';
 
 export const SellsScreen = () => {
   return (

@@ -7,8 +7,8 @@ import Proptypes from 'prop-types';
  * @returns A state counter of any item, useful for products
  */
 
-export const useQuantity = (limit) => {
-  const [productQty, setProductQty] = useState(1);
+export const useQuantity = (initialValue, limit) => {
+  const [productQty, setProductQty] = useState(initialValue);
 
   const incrementQty = () => setProductQty(productQty + 1);
 

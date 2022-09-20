@@ -43,7 +43,7 @@ export const ProfileScreen = () => {
       </div>
       <div className='flex justify-center mt-16'>
         <ActionButtonWithIcon
-          icon={<IoLogOutOutline />}
+          Icon={IoLogOutOutline}
           value='Log out'
         />
       </div>

@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 
-export const useSearch = (query) => {
-  const [searchState, setSearchState] = useState({});
+export const useSearch = (query = '') => {
+  const [searchState, setSearchState] = useState({
+    data: [],
+    loading: true,
+  });
 
   useEffect(() => {
     if (query?.length < 3) return;
@@ -12,7 +15,10 @@ export const useSearch = (query) => {
       );
       const body = await res.json();
 
-      setSearchState({ ...body.products });
+      setSearchState({
+        data: [...body.products],
+        loading: false,
+      });
     };
 
     searchData();

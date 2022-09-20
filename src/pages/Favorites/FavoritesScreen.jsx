@@ -2,7 +2,7 @@ import { FavoriteItem } from './FavoriteItem';
 import { LeftArrow } from '../../components/navigation/LeftArrow';
 import { ListComponent } from '../../components/lists/ListComponent';
 
-import { itemList } from '../../helpers/itemList';
+import { itemList } from '../../utilities/itemList';
 
 export const FavoritesScreen = () => {
   return (

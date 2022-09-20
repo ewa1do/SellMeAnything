@@ -29,7 +29,7 @@ export const PaymentScreen = () => {
 
         <ActionButtonWithIcon
           value='Pay'
-          icon={<IoCardOutline />}
+          Icon={IoCardOutline}
         />
       </form>
     </>

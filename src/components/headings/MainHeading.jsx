@@ -1,6 +1,6 @@
 export const MainHeading = ({ title }) => {
   return (
-    <div className='flex justify-center my-8'>
+    <div className='flex justify-center my-8 z-10'>
       <h2
         className="text-3xl font-medium capitalize relative z-10 
         after:absolute after:-bottom-2 after:right-0 after:-z-10 after:h-0.5 

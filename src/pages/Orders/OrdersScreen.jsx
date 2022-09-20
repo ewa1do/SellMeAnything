@@ -1,7 +1,7 @@
 import { LeftArrow } from '../../components/navigation/LeftArrow';
 import { ListComponent } from '../../components/lists/ListComponent';
 import { OrderComponent } from './OrderComponent';
-import { orders } from '../../helpers/itemList';
+import { orders } from '../../utilities/itemList';
 
 export const OrdersScreen = () => {
   return (

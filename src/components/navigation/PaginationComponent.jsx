@@ -1,6 +1,8 @@
 import { range } from '../../utilities/range';
 import { PaginationButton } from './PaginationButton';
 
+// TODO: create a active class to the current page
+
 export const PaginationComponent = ({
   totalItems,
   itemsPerPage,
