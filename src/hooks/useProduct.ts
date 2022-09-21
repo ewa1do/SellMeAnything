@@ -1,29 +1,30 @@
-import { useState, useMemo } from 'react';
+import { useState, useEffect } from 'react';
+import { DataResponse } from '../interfaces';
 import { API_URL_TEST } from '../utilities/config';
 
-/**
- *
- * @param {number} productId
- * @returns A memorize object with data from the response
- */
+interface DataState {
+  data: DataResponse;
+  loading: boolean;
+}
 
-export const useProduct = (productId) => {
-  const [productState, setProductState] = useState({
+export const useProduct = (productId: string | undefined) => {
+  const [productState, setProductState] = useState<DataState>({
     data: {},
     loading: true,
-  });
+  } as DataState);
 
-  useMemo(async () => {
-    const res = await fetch(
-      `${API_URL_TEST}/products/${productId}`
-    );
-
+  const fetchDataFromApi = async () => {
+    const res = await fetch(`${API_URL_TEST}/products/${productId}`);
     const body = await res.json();
 
     setProductState({
       data: { ...body },
       loading: false,
     });
+  };
+
+  useEffect(() => {
+    fetchDataFromApi();
   }, [productId]);
 
   return productState;
