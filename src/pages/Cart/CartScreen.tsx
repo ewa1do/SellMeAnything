@@ -1,12 +1,15 @@
 import { useSelector } from 'react-redux';
 
+import { useAppSelector } from '../../redux/hooks';
+
 import { calculateSubtotalShippingAndTotal } from '../../utilities/calculateTotal';
 import { Cart, CartButton, CartCost, CartProducts, CartScreenEmpty } from './index';
 import { LeftArrow } from '../../components/navigation/LeftArrow';
 import { Product, State } from '../../interfaces';
 
 export const CartScreen = () => {
-  const cartItems = useSelector((state: State) => state.cart.items);
+  // TODO: Fix the selector, (typing redux)
+  const { items: cartItems } = useAppSelector((state) => state.cart);
 
   const [subtotal, shippingCost, total] = calculateSubtotalShippingAndTotal<Product>(cartItems);
 

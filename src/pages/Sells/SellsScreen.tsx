@@ -1,8 +1,8 @@
-import { LeftArrow } from '../../components/navigation/LeftArrow';
-import { ListComponent } from '../../components/lists/ListComponent';
+import { LeftArrow } from '@/components/navigation/';
+import { ListComponent } from '@/components/lists/';
 import { SellsComponent } from './SellsComponent';
 
-import { orders } from '../../utilities/itemList.js';
+import { orders } from '@/utilities/';
 
 export const SellsScreen = () => {
   return (

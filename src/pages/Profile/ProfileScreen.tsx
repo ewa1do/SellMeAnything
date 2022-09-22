@@ -1,5 +1,5 @@
-import { LeftArrow } from '../../components/navigation/LeftArrow';
-import { Profile, ProfileActions, ProfileButton, ProfileUser } from './index';
+import { LeftArrow } from '@/components/navigation/';
+import { Profile, ProfileActions, ProfileButton, ProfileUser } from './';
 
 export const ProfileScreen = () => {
   return (

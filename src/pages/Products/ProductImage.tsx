@@ -1,5 +1,5 @@
-import { Carousel } from '../../components/UI/Carousel';
-import { ImageCarouselProps } from '../../interfaces';
+import { Carousel } from '@/components/UI/';
+import { ImageCarouselProps } from '@/interfaces';
 
 export const ProductImage = ({ images, thumbnail, duration }: ImageCarouselProps) => {
   return (

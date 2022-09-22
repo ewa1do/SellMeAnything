@@ -1,5 +1,5 @@
 import { IoBagAdd, IoHeartSharp } from 'react-icons/io5';
-import { ButtonComponent } from '../../components/buttons/ButtonComponent';
+import { ButtonComponent } from '@/components/buttons/';
 
 type onClick = {
   onClick: () => void;

@@ -1,7 +1,7 @@
-import { ItemCard } from '../../components/cards/ItemCard';
-import { MainHeading } from '../../components/headings/MainHeading';
-import { Navbar } from '../../components/Layout/Navbar/Navbar';
-import { ListComponent } from '../../components/lists/ListComponent';
+import { ItemCard } from '@/components/cards/';
+import { MainHeading } from '@/components/headings/';
+import { Navbar } from '@/components/Layout/Navbar/';
+import { ListComponent } from '@/components/lists/';
 
 export const TrendingScreen = () => {
   return (

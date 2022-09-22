@@ -1,8 +1,7 @@
-import { FavoriteItem } from './FavoriteItem';
-import { LeftArrow } from '../../components/navigation/LeftArrow';
-import { ListComponent } from '../../components/lists/ListComponent';
-
-import { itemList } from '../../utilities/itemList';
+import { FavoriteItem } from './';
+import { itemList } from '@/utilities/';
+import { LeftArrow } from '@/components/navigation/';
+import { ListComponent } from '@/components/lists/';
 
 export const FavoritesScreen = () => {
   return (
