@@ -1,4 +1,5 @@
 export { Profile } from './Profile';
 export { ProfileActions } from './ProfileActions';
-export { ProfileUser } from './ProfileUser';
 export { ProfileButton } from './ProfileButton';
+export { ProfileScreen } from './ProfileScreen';
+export { ProfileUser } from './ProfileUser';

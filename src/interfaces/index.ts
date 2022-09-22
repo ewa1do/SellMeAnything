@@ -15,3 +15,23 @@ export interface Product {
 export interface State {
   cart: Product[];
 }
+
+export interface ImageCarouselProps {
+  duration?: number;
+  images: string | string[];
+  thumbnail: string;
+}
+
+export interface DataResponse {
+  brand: string;
+  category: string;
+  description: string;
+  discountPercentage: number;
+  id: number;
+  images: string[];
+  price: number;
+  rating: number;
+  stock: number;
+  thumbnail: string;
+  title: string;
+}

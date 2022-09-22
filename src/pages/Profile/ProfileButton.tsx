@@ -1,5 +1,5 @@
 import { IoLogOutOutline } from 'react-icons/io5';
-import { ActionButtonWithIcon } from '../../components/buttons/ActionButtonWithIcon';
+import { ActionButtonWithIcon } from '@/components/buttons/';
 
 export const ProfileButton = () => {
   return (

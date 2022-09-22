@@ -1,20 +1,20 @@
 import { Fragment } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { CartScreen } from '../pages/Cart/CartScreen';
-import { FavoritesScreen } from '../pages/Favorites/FavoritesScreen';
-import { HomeScreen } from '../pages/Home/HomeScreen';
-import { LoginScreen } from '../pages/Login/LoginScreen';
-import { OrdersScreen } from '../pages/Orders/OrdersScreen';
-import { PaymentScreen } from '../pages/Payment/PaymentScreen';
-import { ProfileScreen } from '../pages/Profile/ProfileScreen';
-import { RegisterScreen } from '../pages/Register/RegisterScreen';
-import { SellsScreen } from '../pages/Sells/SellsScreen';
-import { BestSellersScreen } from '../pages/BestSellers/BestSellersScreen';
-import { ProductsScreen } from '../pages/Products/ProductsScreen';
-import { NewArrivalsScreen } from '../pages/NewArrivals/NewArrivalsScreen';
-import { ShopByDeparmentScreen } from '../pages/ShopByDepartment/ShopByDeparmentScreen';
-import { TrendingScreen } from '../pages/Trending/TrendingScreen';
+import { BestSellersScreen } from '@/pages/BestSellers/';
+import { CartScreen } from '@/pages/Cart/';
+import { FavoritesScreen } from '@/pages/Favorites/';
+import { HomeScreen } from '@/pages/Home/';
+import { LoginScreen } from '@/pages/Login/';
+import { NewArrivalsScreen } from '@/pages/NewArrivals/';
+import { OrdersScreen } from '@/pages/Orders/';
+import { PaymentScreen } from '@/pages/Payment/';
+import { ProductsScreen } from '@/pages/Products/';
+import { ProfileScreen } from '@/pages/Profile/';
+import { RegisterScreen } from '@/pages/Register/';
+import { SellsScreen } from '@/pages/Sells/';
+import { ShopByDeparmentScreen } from '@/pages/ShopByDepartment/';
+import { TrendingScreen } from '@/pages/Trending/';
 
 // TODO: refactor the app router by creating sub routers to organize all this mess! 😫
 export const AppRouter = () => {

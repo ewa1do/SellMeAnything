@@ -1,7 +1,7 @@
-import { LeftArrow } from '../../components/navigation/LeftArrow';
-import { ListComponent } from '../../components/lists/ListComponent';
+import { LeftArrow } from '@/components/navigation/';
+import { ListComponent } from '@/components/lists/';
 import { OrderComponent } from './OrderComponent';
-import { orders } from '../../utilities/itemList';
+import { orders } from '@/utilities/';
 
 export const OrdersScreen = () => {
   return (

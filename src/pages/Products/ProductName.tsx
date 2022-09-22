@@ -1,4 +1,4 @@
-import { useQuantity } from '../../hooks/useQuantity';
+import { useQuantity } from '@/hooks/';
 
 interface Props {
   price: number;

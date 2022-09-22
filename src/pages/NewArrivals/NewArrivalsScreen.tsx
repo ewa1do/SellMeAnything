@@ -1,14 +1,13 @@
-import { ItemCard } from '../../components/cards/ItemCard';
-import { MainHeading } from '../../components/headings/MainHeading';
-import { Navbar } from '../../components/Layout/Navbar/Navbar';
-import { ListComponent } from '../../components/lists/ListComponent';
-
-import { detailedItems } from '../../utilities/itemList.js';
+import { detailedItems } from '@/utilities/itemList.js';
+import { ItemCard } from '@/components/cards/ItemCard';
+import { ListComponent } from '@/components/lists/ListComponent';
+import { MainHeading } from '@/components/headings/';
+import { Navbar } from '@/components/Layout/Navbar/';
 
 export const NewArrivalsScreen = () => {
   return (
     <div className='p-3'>
-      <Navbar navigationArrow={false} />
+      <Navbar />
 
       <MainHeading title='New Items on Sale!' />
 

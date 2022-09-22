@@ -1,5 +1,5 @@
 import { IoPersonCircleSharp, IoHeartOutline, IoPricetagOutline } from 'react-icons/io5';
-import { Props as ProfileKeys } from '../../components/lists/ListToScreenWIthIcon';
+import { Props as ProfileKeys } from '@/components/lists/';
 
 export const profileLinks: Array<ProfileKeys> = [
   {
