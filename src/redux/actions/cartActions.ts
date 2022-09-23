@@ -1,15 +1,25 @@
-import { types } from '../types/types';
+export enum CartActionType {
+  ADD_NEW_ITEM = 'NEW_ITEM',
+}
 
-export const cartAddNewItem = (item) => {
-  return {
-    type: types.cartAddNewItem,
-    payload: {
-      title: item.title,
-      thumbnail: item.url || item.thumbnail,
-      price: item.price,
-      id: item.id,
-      stock: item.stock,
-      qty: item.productQty || 1,
-    },
-  };
-};
+export interface State {
+  items: ProductPayload[];
+}
+
+export interface ProductPayload {
+  id: string;
+  price: number;
+  qty: number;
+  stock: number;
+  thumbnail: string;
+  title: string;
+  url?: string;
+  productQty?: number;
+}
+
+export interface AddNewItemAction {
+  type: CartActionType.ADD_NEW_ITEM;
+  payload: ProductPayload;
+}
+
+export type CartAction = AddNewItemAction;

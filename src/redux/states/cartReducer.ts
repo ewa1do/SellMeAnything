@@ -1,21 +1,15 @@
-import { types } from '../types/types';
+import { State, CartAction, CartActionType } from '../actions/cartActions';
 
-const initialState = {
+const initialState: State = {
   items: [],
 };
 
-export const cartReducer = (state = initialState, action) => {
+export const cartReducer = (state = initialState, action: CartAction) => {
   switch (action.type) {
-    case types.cartAddNewItem:
-      const totalPrice =
-        action.payload.price * action.payload.qty;
-
+    case CartActionType.ADD_NEW_ITEM:
       return {
         ...state,
-        items: [
-          ...state.items,
-          { ...action.payload, totalPrice },
-        ],
+        items: [...state.items, { ...action.payload }],
       };
     default:
       return state;
