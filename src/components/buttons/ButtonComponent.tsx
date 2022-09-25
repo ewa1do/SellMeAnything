@@ -1,31 +1,22 @@
-import Proptypes from 'prop-types';
+import { ButtonClass } from './classes';
 
-export const ButtonComponent = ({
-  Icon,
-  value,
-  className,
-  onClick,
-}) => {
-  return (
+interface Props {
+  Icon?: JSX.Element;
+  value?: string;
+  className: ButtonClass;
+  onClick: () => void;
+}
+
+export const ButtonComponent = ({ Icon, value, className, onClick }: Props) => {
+  const buttonWithValue = (
     <button
-      className={className}
+      className={className.button}
       onClick={onClick}
     >
-      <span className='mx-4 text-slate-200'>{value}</span>
-      <Icon className='text-slate-200 text-lg' />
+      <span className={className.value}>{value}</span>
+      <i className={className.icon}>{Icon}</i>
     </button>
   );
-};
 
-ButtonComponent.defaultProps = {
-  className: `flex items-center justify-center py-1 min-w-max 
-    bg-gray-800 rounded hover:bg-slate-900 duration-300 my-2`,
-  value: 'Add to Bag',
-};
-
-ButtonComponent.propTypes = {
-  Icon: Proptypes.func,
-  value: Proptypes.string,
-  className: Proptypes.string.isRequired,
-  onClick: Proptypes.func.isRequired,
+  return buttonWithValue;
 };

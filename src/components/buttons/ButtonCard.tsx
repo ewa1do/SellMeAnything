@@ -1,11 +1,11 @@
 import { useDispatch } from 'react-redux';
-import { cartAddNewItem } from '../../redux/actions/cartActions';
+import { doAddNewItem } from '@/redux';
 
 export const ButtonCard = ({ Icon, value, props }) => {
   const dispatch = useDispatch();
 
   const handleAddNewItem = () => {
-    dispatch(cartAddNewItem(props));
+    dispatch(doAddNewItem(props));
   };
 
   return (
