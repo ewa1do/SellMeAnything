@@ -1,13 +1,7 @@
 import { useQuantity } from '../../hooks/useQuantity';
 
-export const ButtonWithIncrementAndDecrementFunc = ({
-  initialValue,
-  limit,
-}) => {
-  const { productQty, incrementQty, decrementQty } = useQuantity(
-    initialValue,
-    limit
-  );
+export const ButtonWithIncrementAndDecrementFunc = ({ initialValue, limit }) => {
+  const { productQty, incrementQty, decrementQty } = useQuantity(initialValue, limit);
 
   return (
     <div className='flex items-center mr-2 mt-2 border-2 border-gray-600 rounded-md h-12'>
