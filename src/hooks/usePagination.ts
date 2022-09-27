@@ -1,21 +1,17 @@
 import { useState } from 'react';
-import { useFetch } from './useFetch';
+import { useAllProducts } from '@/hooks';
 
-export const usePagination = (category) => {
-  const { data, loading } = useFetch(category);
+export const usePagination = (itemsPerPage: number = 5) => {
+  const { data, loading } = useAllProducts();
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
-  const currentItems = data.slice(
-    indexOfFirstItem,
-    indexOfLastItem
-  );
+  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return {
     data,
