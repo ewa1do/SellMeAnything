@@ -1,4 +1,4 @@
-export * from './useFetch';
+export * from './useAllProducts';
 export * from './useInput';
 export * from './usePagination';
 export * from './useProduct';
