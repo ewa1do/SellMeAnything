@@ -1,31 +1,25 @@
-import { useState, useEffect } from 'react';
-import { DataResponse } from '../interfaces';
-import { API_URL_TEST } from '../utilities/config';
+import { useCallback, useEffect, useState } from 'react';
+import { getProductResponseById } from '@/services';
+import { DataState } from '@/models';
 
-interface DataState {
-  data: DataResponse;
-  loading: boolean;
-}
-
-export const useProduct = (productId: string | undefined) => {
+export const useProduct = (productId: string) => {
   const [productState, setProductState] = useState<DataState>({
     data: {},
     loading: true,
   } as DataState);
 
-  const fetchDataFromApi = async () => {
-    const res = await fetch(`${API_URL_TEST}/products/${productId}`);
-    const body = await res.json();
+  const getProduct = useCallback(async () => {
+    const data = await getProductResponseById(productId);
 
     setProductState({
-      data: { ...body },
+      data: data,
       loading: false,
     });
-  };
+  }, [productId]);
 
   useEffect(() => {
-    fetchDataFromApi();
-  }, [productId]);
+    getProduct();
+  }, [getProduct]);
 
   return productState;
 };
