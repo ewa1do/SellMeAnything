@@ -12,7 +12,8 @@ export const useProduct = (productId: string) => {
     const data = await getProductResponseById(productId);
 
     setProductState({
-      data: data,
+      ...productState,
+      data,
       loading: false,
     });
   }, [productId]);
