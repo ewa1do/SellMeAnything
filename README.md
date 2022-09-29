@@ -15,5 +15,6 @@
 ---
 ### Preview:
 
-![screen-capture.webm](https://user-images.githubusercontent.com/72087299/193041876-8efc5ff5-8291-4749-b52c-b40093a47808.webm)
-[screen-capture.webm](https://user-images.githubusercontent.com/72087299/193041918-d71572d4-d461-4fad-b83c-c3dd77ea54dd.webm)
+
+https://user-images.githubusercontent.com/72087299/193042183-e2e07c1f-a1e1-483d-a707-b5e68b3ca356.mp4
+
