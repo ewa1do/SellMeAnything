@@ -3,7 +3,7 @@ export interface ProductResponse {
   category: string;
   description: string;
   discountPercentage: number;
-  id: number | string;
+  id: string;
   images: string[];
   price: number;
   rating: number;

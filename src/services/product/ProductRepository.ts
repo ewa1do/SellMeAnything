@@ -1,6 +1,11 @@
 import { ProductResponse } from '@/models';
 
-class ProductRepository {
+interface Product {
+  getAll: () => Promise<ProductResponse[]>;
+  get: (endpoint: string) => Promise<ProductResponse>;
+}
+
+class ProductRepository implements Product {
   protected url = import.meta.env.VITE_APP_API_BASE_URL;
 
   public async getAll(): Promise<ProductResponse[]> {
