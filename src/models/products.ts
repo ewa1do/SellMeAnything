@@ -10,6 +10,7 @@ export interface ProductResponse {
   stock: number;
   thumbnail: string;
   title: string;
+  qty?: number;
 }
 
 export interface DataState {

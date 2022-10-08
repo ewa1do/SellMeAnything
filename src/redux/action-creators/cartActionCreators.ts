@@ -1,18 +1,24 @@
 import { Dispatch } from '@reduxjs/toolkit';
-import { CartAction, CartActionType, ProductPayload } from '../actions/';
+import { CartAction, CartActionType } from '@/redux';
+import { ProductResponse } from '@/models';
 
-export const doAddNewItem = (item: ProductPayload) => {
+export const doAddNewItem = (product: ProductResponse) => {
   return (dispatch: Dispatch<CartAction>) => {
     dispatch({
       type: CartActionType.ADD_NEW_ITEM,
       payload: {
-        title: item.title,
-        thumbnail: item.url || item.thumbnail,
-        price: item.price,
-        id: item.id,
-        stock: item.stock,
-        qty: item.productQty || 1,
+        ...product,
+        qty: product.qty || 1,
       },
+    });
+  };
+};
+
+export const loadActiveProduct = (product: ProductResponse) => {
+  return (dispatch: Dispatch<CartAction>) => {
+    dispatch({
+      type: CartActionType.LOAD_ACTIVE_PRODUCT,
+      payload: product,
     });
   };
 };
