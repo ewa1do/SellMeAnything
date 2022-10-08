@@ -35,7 +35,5 @@ export const useProduct = (productId: string | undefined) => {
     }
   }, []);
 
-  console.log(productState);
-
   return productState;
 };
